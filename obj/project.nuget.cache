@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "F6wBjveLRPE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\drago\\source\\repos\\RestaurantOrderSystem\\RestaurantOrderSystem\\RestaurantOrderSystem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\drago\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.analyzers\\1.18.0\\xunit.analyzers.1.18.0.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.core\\2.9.3\\xunit.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
+    "C:\\Users\\drago\\.nuget\\packages\\xunit.runner.visualstudio\\3.0.0\\xunit.runner.visualstudio.3.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "RestaurantOrderSystem depends on xunit.runner.visualstudio (>= 2.9.3) but xunit.runner.visualstudio 2.9.3 was not found. xunit.runner.visualstudio 3.0.0 was resolved instead.",
+      "libraryId": "xunit.runner.visualstudio",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
