@@ -19,3 +19,4 @@ C:\Users\drago\source\repos\RestaurantOrderSystem\RestaurantOrderSystem\obj\Debu
 C:\Users\drago\source\repos\RestaurantOrderSystem\RestaurantOrderSystem\obj\Debug\net6.0\RestaurantOrderSystem.pdb
 C:\Users\drago\source\repos\RestaurantOrderSystem\RestaurantOrderSystem\obj\Debug\net6.0\RestaurantOrderSystem.genruntimeconfig.cache
 C:\Users\drago\source\repos\RestaurantOrderSystem\RestaurantOrderSystem\obj\Debug\net6.0\ref\RestaurantOrderSystem.dll
+C:\Users\drago\source\repos\RestaurantOrderSystem\RestaurantOrderSystem\obj\Debug\net6.0\RestaurantOrderSystem.sourcelink.json

@@ -4,5 +4,7 @@
     {
         string Name { get; }
         double Price { get; }
+        string GetName();
+        double GetPrice();
     }
 }

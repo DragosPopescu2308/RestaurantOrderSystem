@@ -14,7 +14,7 @@ class Program
         while (true)
         {
             Console.WriteLine("\n--- Meniu Restaurant ---");
-            Console.WriteLine("1. Adauga produs în comand");
+            Console.WriteLine("1. Adauga produs în comanda");
             Console.WriteLine("2. Sterge produs din comanda");
             Console.WriteLine("3. Afiseaza comanda curenta");
             Console.WriteLine("4. Anuleaza ultima comanda");
@@ -32,11 +32,11 @@ class Program
 
                     try
                     {
-                        IMenuItem item = MenuItemFactory.CreateItem(productType);
+                        IMenuItem item = MenuItemFactory.CreateItem(productType); // Se foloseste Factory pentru creare
                         ICommand command = new AddOrderCommand(order, item);
                         command.Execute();
                         commandHistory.Add(command);
-                        Console.WriteLine($"{item.Name} a fost adaugat in comanda!");
+                        Console.WriteLine($"{item.GetName()} a fost adaugat in comanda!"); // Foloseste GetName() pentru incapsularea numelui
                     }
                     catch (ArgumentException ex)
                     {
@@ -54,15 +54,17 @@ class Program
                     Console.WriteLine("\nProdusele din comanda:");
                     for (int i = 0; i < order.Items.Count; i++)
                     {
-                        Console.WriteLine($"{i + 1}. {order.Items[i].Name} - {order.Items[i].Price} RON");
+                        Console.WriteLine($"{i + 1}. {order.Items[i].GetName()} - {order.Items[i].GetPrice()} RON"); // Foloseste GetName() si GetPrice()
                     }
 
                     Console.Write("Introdu numarul produsului pe care vrei sa-l stergi: ");
                     if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= order.Items.Count)
                     {
                         IMenuItem itemToRemove = order.Items[index - 1];
-                        order.RemoveItem(itemToRemove);
-                        Console.WriteLine($"{itemToRemove.Name} a fost eliminat din comanda.");
+                        ICommand removeCommand = new RemoveOrderCommand(order, itemToRemove);
+                        removeCommand.Execute();
+                        commandHistory.Add(removeCommand);
+                        Console.WriteLine($"{itemToRemove.GetName()} a fost eliminat din comanda.");
                     }
                     else
                     {
@@ -80,7 +82,7 @@ class Program
                         Console.WriteLine("\nComanda curenta:");
                         foreach (var item in order.Items)
                         {
-                            Console.WriteLine($"{item.Name} - {item.Price} RON");
+                            Console.WriteLine($"{item.GetName()} - {item.GetPrice()} RON"); // Foloseste GetName() si GetPrice()
                         }
                     }
                     break;
