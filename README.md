@@ -2,6 +2,8 @@
 
 Aceasta este o aplicatie consola care permite plasarea si gestionarea comenzilor unui restaurant.
 
+#### Branchul principal este main.
+
 ## Design Patterns
 
 Cele doua Design Patterns utilizate in acest proiect sunt:
