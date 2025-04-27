@@ -6,44 +6,49 @@ using System;
 
 public class OrderTests
 {
-    [Theory]
-    [InlineData("pizza")]
-    [InlineData("pasta")]
-    [InlineData("burger")]
-    [InlineData("drink")]
-    [InlineData("salad")]
-    public void Test_AddItemToOrder(string productType)
-    {
-        // Arrange
-        Order order = new Order();
-        IMenuItem item = MenuItemFactory.CreateItem(productType);
+     [Theory]
+ [InlineData("pizza")]
+ [InlineData("pasta")]
+ [InlineData("burger")]
+ [InlineData("drink")]
+ [InlineData("salad")]
+ public void Test_AddItemToOrder(string productType)
+ {
+     // Arrange
+     Order order = new Order();
+     IMenuItem item = MenuItemFactory.CreateItem(productType);
+     ICommand addCommand = new AddOrderCommand(order, item);
 
-        // Act
-        order.AddItem(item);
+     // Act
+     addCommand.Execute();
 
-        // Assert
-        Assert.Contains(item, order.Items);
-    }
+     // Assert
+     Assert.Contains(item, order.Items);
+ }
 
-    [Theory]
-    [InlineData("pizza")]
-    [InlineData("pasta")]
-    [InlineData("burger")]
-    [InlineData("drink")]
-    [InlineData("salad")]
-    public void Test_RemoveItemFromOrder(string productType)
-    {
-        // Arrange
-        Order order = new Order();
-        IMenuItem item = MenuItemFactory.CreateItem(productType);
-        order.AddItem(item);
 
-        // Act
-        order.RemoveItem(item);
+ [Theory]
+ [InlineData("pizza")]
+ [InlineData("pasta")]
+ [InlineData("burger")]
+ [InlineData("drink")]
+ [InlineData("salad")]
+ public void Test_RemoveItemFromOrder(string productType)
+ {
+     // Arrange
+     Order order = new Order();
+     IMenuItem item = MenuItemFactory.CreateItem(productType);
+     ICommand addCommand = new AddOrderCommand(order, item);
+     addCommand.Execute(); // Adăugăm mai întâi produsul în comandă
 
-        // Assert
-        Assert.DoesNotContain(item, order.Items);
-    }
+     ICommand removeCommand = new RemoveOrderCommand(order, item);
+
+     // Act
+     removeCommand.Execute();
+
+     // Assert
+     Assert.DoesNotContain(item, order.Items);
+ }
 
     [Theory]
     [InlineData("pizza")]
